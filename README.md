@@ -147,9 +147,9 @@ Explication : sur un seul serveur, Proxmox gère des VM KVM et des conteneurs LX
 |  Proxmox VE  |   |  Proxmox VE  |   |  Proxmox VE  |
 |  VMs & CTs   |   |  VMs & CTs   |   |  VMs & CTs   |
 +------+-------+   +------+-------+   +------+-------+
-       |                |                 |
-       |   Ceph public  |   Ceph public   |
-       +------ OSDs & MONs (RADOS) --------+
+       |                |                    |
+       |   Ceph public  |     Ceph public    |
+       +------ OSDs & MONs (RADOS) ----------+
                       |
               RBD (block devices)
                       |
