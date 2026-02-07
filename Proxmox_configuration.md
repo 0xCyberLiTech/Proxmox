@@ -104,25 +104,50 @@ iface vmbr1 inet static
 
 Exemples de commandes :
 
-```bash
 # activer vmbr1 (si nécessaire).
-ifreload -a   # ou `ifup vmbr1`
 
+```bash
+ifreload -a   # ou `ifup vmbr1`
+```
 # activer forwarding IPv4 immédiatement.
+
+```bash
 sysctl -w net.ipv4.ip_forward=1
+```
 
 # rendre persistant.
-echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-sysctl -p
 
+```bash
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+```
+
+```bash
+sysctl -p
+```
 # ajouter NAT/forwarding (adapter si vmbr0 a un autre nom).
+
+```bash
 iptables -t nat -A POSTROUTING -s 10.100.100.0/24 -o vmbr0 -j MASQUERADE
+```
+
+```bash
 iptables -A FORWARD -i vmbr0 -o vmbr1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+```
+
+```bash
 iptables -A FORWARD -i vmbr1 -o vmbr0 -j ACCEPT
+```
 
 # sauvegarder les règles (Debian/Proxmox).
+
+```bash
 apt update
+```
+
+```bash
 apt install -y iptables-persistent
+```
+
 netfilter-persistent save
 ```
 
@@ -271,6 +296,8 @@ Copier le script sur l'hôte Proxmox et exécuter :
 
 ```bash
 scp setup_vmbr1_nat.sh root@proxmox-host:/root/
+```
+```bash
 ssh root@proxmox-host 'chmod +x /root/setup_vmbr1_nat.sh && /root/setup_vmbr1_nat.sh'
 ```
 
@@ -278,6 +305,8 @@ Ou exécuter localement :
 
 ```bash
 sudo chmod +x setup_vmbr1_nat.sh
+```
+```bash
 ./setup_vmbr1_nat.sh
 ```
 
@@ -376,18 +405,32 @@ echo " - Si nécessaire, restaurez manuellement une sauvegarde spécifique depui
 - Nommer clairement : `setup_vmbr1_nat.sh` et `rollback_vmbr1.sh`.  
 - Rendre exécutables et conserver une sauvegarde des originaux (ou un repo git simple).
 
-```bash
 # créer un dossier central et y copier les scripts
+
+```bash
 mkdir -p /root/proxmox-scripts
+```
+```bash
 cp ./setup_vmbr1_nat.sh ./rollback_vmbr1.sh /root/proxmox-scripts/
+```
 
 # rendre exécutables
+
+```bash
 chmod +x /root/proxmox-scripts/setup_vmbr1_nat.sh
+```
+```bash
 chmod +x /root/proxmox-scripts/rollback_vmbr1.sh
+```
 
 # exécution (exemple)
+
+```bash
 sudo /root/proxmox-scripts/setup_vmbr1_nat.sh
+```
 # rollback
+
+```bash
 sudo /root/proxmox-scripts/rollback_vmbr1.sh
 ```
 
