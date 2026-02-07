@@ -62,7 +62,7 @@ Le contenu est structuré, accessible et optimisé SEO pour répondre aux besoin
 
 ---
 
-# Sauvegarde et restauration Proxmox — guide détaillé
+# Sauvegarde et restauration Proxmox - guide détaillé
 
 Objectif
 - Fournir une procédure claire, complète et pédagogique pour sauvegarder et restaurer des VMs/QEMU et conteneurs LXC sur Proxmox VE.
