@@ -148,6 +148,7 @@ apt update
 apt install -y iptables-persistent
 ```
 
+```bash
 netfilter-persistent save
 ```
 
