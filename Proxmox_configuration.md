@@ -483,3 +483,14 @@ Table des routages du serveur PROMOX
 default via 10.100.100.1 dev vmbr0 proto kernel onlink
 10.100.100.0/24 dev vmbr0 proto kernel scope link src ………. 
 ```
+---
+
+<div align="center">
+  <a href="https://github.com/0xCyberLiTech" target="_blank" rel="noopener">
+    <img src="https://skillicons.dev/icons?i=linux,debian,bash,docker,nginx,git,vim,python,markdown" alt="Skills" width="440">
+  </a>
+</div>
+
+<div align="center">
+  <b>🔒 Un guide proposé par <a href="https://0xcyberlitech.com/">0xCyberLiTech</a> • Pour des tutoriels accessibles à tous. 🔒</b>
+</div>
