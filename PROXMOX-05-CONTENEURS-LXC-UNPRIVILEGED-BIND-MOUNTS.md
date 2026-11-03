@@ -72,7 +72,6 @@ Contrairement à une machine virtuelle KVM qui émule tout un matériel et lance
 - **Redimensionnement à la volée :** l'ajout de cœurs CPU ou de RAM s'effectue **à chaud sans aucun redémarrage** du conteneur.
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart TD
     KERNEL["[NOYAU HÔTE PROXMOX VE] Linux 6.x (Namespaces · cgroups v2 · AppArmor)"]
     KERNEL --> UNPRIV["[CT NON-PRIVILÉGIÉ] --unprivileged 1 (Recommandé)<br/>UID 0 (root dans le CT) = UID 100000 (sans droit sur l'hôte)"]

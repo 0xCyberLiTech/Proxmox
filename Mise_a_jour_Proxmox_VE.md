@@ -72,7 +72,6 @@ Juste après l'installation d'un serveur **Proxmox VE 8 (`Debian 12 Bookworm`)**
 > L'image ISO officielle Proxmox active par défaut deux dépôts commerciaux (`pve-enterprise.sources` et `ceph.sources`) qui exigent une clé d'abonnement payante. Pour un laboratoire R&D, un homelab ou une pré-production sans souscription commerciale, Proxmox fournit officiellement le dépôt gratuit **`pve-no-subscription`**. Tant que cette bascule n'est pas effectuée, votre hyperviseur ne reçoit **aucun correctif de sécurité Debian ni aucune mise à jour du noyau Proxmox**.
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     ISO["[INSTALLATION ISO] Proxmox VE 8 / 9"] --> ENT["[DEFAUT] pve-enterprise.sources<br/>Erreur HTTP 401 sans clé payante"]
     ENT -->|"1. Désactivation propre (.disabled)"| KEY["[TROUSSEAU GPG] Vérification Empreinte<br/>proxmox-release-trixie.gpg"]

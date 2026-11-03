@@ -76,7 +76,6 @@ Lorsqu'on crée une machine virtuelle KVM dans l'assistant Web Proxmox VE, les v
 | **Network** | `Model` | `VirtIO (paravirtualized)` | **`VirtIO (paravirtualized)` + `Multiqueue`** | Pilote réseau paravirtualisé 10 Gbps+ direct vers le bridge noyau `vmbr0` |
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     TPL["[TEMPLATE 9000] Debian 13 Cloud-Init<br/>CPU host · VirtIO SCSI Single · Guest Agent"] -->|"qm clone 9000 101 --full"| VM["[VM 101] Serveur Debian Prêt en 10s<br/>Clé SSH · IP Statique · Disque redimensionné"]
     VM -->|"Canal virtio-serial"| QGA["[QEMU-GUEST-AGENT]<br/>Arrêt ACPI propre · fsfreeze backup · Remontée IP"]

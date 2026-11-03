@@ -77,7 +77,6 @@ Avant même d'insérer la clé USB d'installation de **Proxmox VE 8 (`Debian 12 
 | **Démarrage Sécurisé** | `Secure Boot` | `Secure Boot` | **`Disabled`** *(Recommandé)* | Proxmox VE supporte Secure Boot, mais le désactiver facilite le chargement de modules noyau tiers (pilotes NVIDIA DKMS / Realtek) |
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     BIOS["[1. BIOS / UEFI]<br/>VT-x / AMD-V = Enabled<br/>VT-d / IOMMU = Enabled"] --> USB["[2. CLÉ USB BOOTABLE]<br/>ISO Officielle Proxmox VE<br/>Mode DD (Rufus / dd)"]
     USB --> FS["[3. CHOIX DISQUE RACINE]<br/>Ext4 + LVM-Thin (1 SSD)<br/>ou ZFS RAID0 / Mirror (NVMe)"]

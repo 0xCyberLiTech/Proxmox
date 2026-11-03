@@ -78,7 +78,6 @@ Cet atelier constitue un **guide complet et 100 % autonome en 10 chapitres chron
 <img src="https://raw.githubusercontent.com/0xCyberLiTech/0xcyberlitech/main/assets/glow-section-cyan.svg" width="100%" alt="" />
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart TD
     BIOS["[00. BIOS / BARE-METAL]<br/>VT-x / AMD-V · IOMMU · ISO DD"] --> APT["[01. DÉPÔTS DEB822]<br/>pve-no-subscription · apt full-upgrade"]
     APT --> VMBR0["[03. RÉSEAU & BRIDGES]<br/>vmbr0 (VLAN-aware) · vmbr1 (DMZ NAT)"]

@@ -68,7 +68,6 @@ qm list && pct list
 Après l'installation de Proxmox VE, l'interface affiche par défaut deux stockages distincts (`local` et `local-lvm` ou `local-zfs`). C'est l'un des points où l'on se perd le plus souvent : **où sont stockées les images ISO ? Où vivent les disques des VMs ? Pourquoi `ls /var/lib/vz/images` est-il vide sur un stockage LVM-Thin ou ZFS ?**
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart TD
     DISK["[DISQUE PHYSIQUE NVMe / SSD]"] --> MODE_LVM["Option A : Installation Standard (Ext4 + LVM-Thin)"]
     DISK --> MODE_ZFS["Option B : Installation ZFS Souveraine (RAID0 / Mirror / RAIDZ)"]

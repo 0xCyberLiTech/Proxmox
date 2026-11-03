@@ -68,7 +68,6 @@ qm list && pct list
 Au quotidien, 95 % des situations de blocage sur Proxmox VE se résolvent en moins de 30 secondes en ligne de commande SSH sans **jamais** avoir besoin de redémarrer le serveur physique :
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart TD
     INC["[SYMPTÔME D'INCIDENT SUR PROXMOX VE]"] --> S1["1. Cadenas sur une VM / CT<br/>('VM is locked (backup/snapshot)')"]
     INC --> S2["2. Interface Web :8006 figée ou inaccessible<br/>(Alors que les VMs tournent normalement)"]

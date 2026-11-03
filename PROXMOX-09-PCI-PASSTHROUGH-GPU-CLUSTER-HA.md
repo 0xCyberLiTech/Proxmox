@@ -68,7 +68,6 @@ qm list && pct list
 Le **PCIe Passthrough (`VFIO`)** permet de détacher un périphérique matériel physique (une carte graphique NVIDIA RTX / AMD, un contrôleur HBA SATA/NVMe ou une carte réseau 10G SFP+) de l'hôte Proxmox VE pour le confier en **accès matériel direct (sans aucune couche d'émulation)** à une machine virtuelle KVM.
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     BIOS["[1. BIOS/UEFI]<br/>VT-d / AMD IOMMU activé"] --> CMDLINE["[2. NOYAU PROXMOX]<br/>iommu=pt + modules vfio_pci"]
     CMDLINE --> GROUP["[3. GROUPES IOMMU]<br/>Isolation de l'adresse PCIe (ex: 01:00.0)"]

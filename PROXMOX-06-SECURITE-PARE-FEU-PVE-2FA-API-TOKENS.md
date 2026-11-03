@@ -68,7 +68,6 @@ qm list && pct list
 Beaucoup d'administrateurs n'osent pas activer le pare-feu intégré de Proxmox VE par peur de perdre immédiatement l'accès à l'interface Web (`TCP 8006`) et au SSH (`TCP 22`). Pourtant, `pve-firewall` possède un mécanisme natif de sécurité conçu spécifiquement pour éviter tout auto-bannissement : l'**`IPSet` réservé `management`**.
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart TD
     DC["[ÉTAGE 1 : DATACENTER] /etc/pve/firewall/cluster.fw<br/>IPSet 'management' (Autorise 8006, 22, 5900-5999, 3128)<br/>Security Groups réutilisables"] --> NODE["[ÉTAGE 2 : NŒUD HÔTE] /etc/pve/nodes/pve/host.fw<br/>Protection de l'hyperviseur lui-même"]
     NODE --> VMCT["[ÉTAGE 3 : VM / CONTENEUR] /etc/pve/firewall/<vmid>.fw<br/>Pare-feu individuel sur le port du bridge (avant même que le paquet n'entre dans la VM)"]

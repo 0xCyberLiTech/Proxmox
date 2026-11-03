@@ -74,7 +74,6 @@ Dans Proxmox VE, le moteur natif **`vzdump`** permet d'exporter une machine virt
 | **`stop`** | **Arrêt complet de la VM** | Éteint proprement la VM (`shutdown`), sauvegarde à froid, puis la rallume | Avant une refonte majeure ou pour une base de données sensible sans Guest Agent |
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     VM["[VM 101 / CT 109 EN LIGNE]"] -->|"1. fsfreeze (Guest Agent)"| VZDUMP["[MOTEUR VZDUMP]<br/>Mode snapshot · Compression zstd"]
     VZDUMP -->|"Archive autonome .vma.zst / .tar.zst"| LOCAL["[STOCKAGE LOCAL / NAS]<br/>/var/lib/vz/dump ou NFS/SMB"]

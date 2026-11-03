@@ -71,7 +71,6 @@ Dans Proxmox VE, chaque pont Linux (**`vmbrX`**) agit exactement comme un **swit
 - **`vmbr1` (Bridge Interne Isolé / DMZ / Lab) :** Il n'est relié à aucune carte physique (`bridge-ports none`). Les VMs branchées sur `vmbr1` communiquent entre elles dans une bulle étanche (`10.100.100.0/24`) et utilisent l'hôte Proxmox (`10.100.100.1`) comme passerelle NAT pour sortir vers Internet.
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#091326', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#00d9ff', 'lineColor': '#00d9ff', 'secondaryColor': '#060b16', 'tertiaryColor': '#0b1528'}}}%%
 flowchart LR
     WAN["[ROUTEUR LAN]<br/>192.0.2.1/24"] <--> NIC["[CARTE PHYSIQUE]<br/>eno1 / enp3s0"]
     NIC <--> VMBR0["[BRIDGE EXTERNE] vmbr0<br/>IP Hôte PVE : 192.0.2.20/24<br/>bridge-vlan-aware yes"]
